@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <link rel="icon" type="image/png" href="assets/cookie.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Kavoon' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='style.css' rel='stylesheet'>
+    </link>
+
+<body>
+    <div class="container-fluid h-100">
+        <div class="okienko d-none" id="modal0">
+            <div class="okienkoContent">
+                <div class="container">
+                    <div class="x">X</div>
+                    <div class="row">
+                        <div class="okienkoName">Opcje</div>
+                    </div>
+                    <div class="row">
+                        <div id="muzyka">
+                            <div id="muzykaIcon" class="Normal"></div>
+                            <input type="range" id="muzykaSlider" value="20">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="dzwiek">
+                            <div id="soundIcon" class="Low"></div>
+                            <input type="range" id="soundSlider" value="50">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText"></div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="okienko d-none" id="modal1">
+            <div class="okienkoContent">
+                <div class="container">
+                    <div class="x">X</div>
+                    <div class="row">
+                        <div class="okienkoName">Muzyka</div>
+                    </div>
+                    <div class="row">
+                        <div class="soundTrack">
+                            <div class="col-2">
+                                <div class="soundTrackImage">
+                                    <img class="soundTrackImg" src="assets/cookie.png">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="soundTrackName">Cookie Clicker</div>
+                                <div class="soundTrackKosztDiv">
+                                    <img src="assets/cookie.png" class="smallCookie">
+                                    <div id="soundTrackKoszt1" class="soundTrackKoszt" data-koszt="0">Posiadane</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div id="soundTrack1" class="soundTrackButton Wybrano Posiadane"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="soundTrackDivider"></div>
+                    <div class="row">
+                        <div class="soundTrack">
+                            <div class="col-2">
+                                <div class="soundTrackImage">
+                                    <img class="soundTrackImg" src="assets/minecraft.webp">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="soundTrackName">Minecraft</div>
+                                <div class="soundTrackKosztDiv">
+                                    <img src="assets/cookie.png" class="smallCookie">
+                                    <div id="soundTrackKoszt2" class="soundTrackKoszt" data-koszt="1000000">1M</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div id="soundTrack2" class="soundTrackButton"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="soundTrackDivider"></div>
+                    <div class="row">
+                        <div class="soundTrack">
+                            <div class="col-2">
+                                <div class="soundTrackImage">
+                                    <img class="soundTrackImg" src="assets/geometryDash.png">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="soundTrackName">Geometry Dash</div>
+                                <div class="soundTrackKosztDiv">
+                                    <img src="assets/cookie.png" class="smallCookie">
+                                    <div id="soundTrackKoszt3" class="soundTrackKoszt" data-koszt="1000000000">1B</div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div id="soundTrack3" class="soundTrackButton"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoTextInfo">*Muzyka jest tylko kosmetyczna*</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="okienko d-none" id="modal2">
+            <div class="okienkoContent">
+                <div class="container">
+                    <div class="x">X</div>
+                    <div class="row">
+                        <div class="okienkoName">Staty</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText" id="staty1">Ciasteczka w Banku: 0</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText" id="staty2">Ciasteczka Razem Zebrane: 0</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText" id="staty3">Budynków Razem: 0</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText" id="staty4">Na sekunde: 0</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="okienko d-none" id="modal3">
+            <div class="okienkoContent">
+                <div class="container">
+                    <div class="x">X</div>
+                    <div class="row">
+                        <div class="okienkoName">Info</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText">Wersja: 1.0.0</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText">nie wiem co tu jeszcze napisać</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText">kocham fortnite</div>
+                    </div>
+                    <div class="row">
+                        <div class="okienkoText"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row h-100">
+            <div class="col-4 d-flex flex-column justify-content-center bgBlue bgCien">
+                <div class="h-15 align-items-start mt-5">
+                    <div class="liczbyWrapper text-center d-flex flex-column ">
+                        <div id="liczba"></div>
+                        <div id="liczbaNaSekunde">na sekunde: 0</div>
+                    </div>
+                </div>
+                <div class=" h-85 d-flex align-self-center">
+                    <div class="cookie-container">
+                        <div id="cookie" class="">
+                            <img id="cookieimg" src="assets/cookie.png">
+                        </div>
+                        <div class="cursors-container" id="cursors-container"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 d-flex bgBlue">
+                <div class="col d-flex justify-content-between">
+                    <div class="divider"></div>
+                    <div class="container-fluid" style="position: relative;">
+                        <div class="row buttonsAndNews">
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="panelButton" style="background-position: 0px 0px; top: 0px; left: 0px;"
+                                        id="modalButton0">Opcje</div>
+                                </div>
+                                <div class="row">
+                                    <div class="panelButton"
+                                        style="background-position: 0px -48px; bottom: 0px; left: 0px;"
+                                        id="modalButton1">Muzyka</div>
+                                </div>
+                            </div>
+                            <div class="col-6 newsWrapper">
+                                <div id="news"></div>
+                            </div>
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="panelButton"
+                                        style="background-position: 100px 0px; top: 0px; right: 0px;" id="modalButton2">
+                                        Staty</div>
+                                </div>
+                                <div class="row">
+                                    <div class="panelButton"
+                                        style="background-position: 100px -48px; bottom: 0px; right: 0px;"
+                                        id="modalButton3">Info</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="horizontalDivider"></div>
+                        <div class="row rowBuildings">
+                            <div id="buildings" class="buildings"></div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                </div>
+                <div class="col maxwidth" style="position: relative;">
+                    <div class="sklep">
+                        <div class="text-center sklep-text">SKLEP</div>
+                        <div class="upgradeWrapper">
+                            <div class="horizontalDivider upgradesText"></div>
+                            <div class="container" style="padding: 0;">
+                                <div id="upgradeWrapper" class="row"></div>
+                            </div>
+                        </div>
+                        <div class="produkty">
+                            <div class="horizontalDivider buildingsText"></div>
+                            <div class="container trybContainer">
+                                <div class="row">
+                                    <div class="col-3 tryb pressed" data-tryb="1">1</div>
+                                    <div class="col-3 tryb" data-tryb="10">10</div>
+                                    <div class="col-3 tryb" data-tryb="100">100</div>
+                                    <div class="col-3 tryb" data-tryb="max">MAX</div>
+                                </div>
+                            </div>
+                            <div id="buildingWrapper" class="buildingWrapper"></div>
+                        </div>
+                    </div>
+                    <div id="tooltip" class="tooltip d-none"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
